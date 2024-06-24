@@ -10,6 +10,12 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v2
+        
+      # 设置Node.js版本为20  
+      - name: Use Node.js 20 
+        uses: actions/setup-node@v2  
+        with:  
+          node-version: 20 
       - name: Build & Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
